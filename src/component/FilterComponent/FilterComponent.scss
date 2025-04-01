@@ -1,0 +1,39 @@
+.filter-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+    padding: 10px;
+    border-radius: 5px;
+    }
+    
+    .react-datepicker-wrapper {
+      width: 170px;
+      z-index: 9999;
+    }
+  
+
+  .datepicker-popper {
+    z-index: 9999 !important;
+  }
+  
+
+  .search-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    
+    input {
+      width: 170px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      outline: none;
+    }
+    .search-icon {
+      position: absolute;
+      right: 10px;
+      color: #888;
+      cursor: pointer;
+    }
+  }

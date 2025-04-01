@@ -1,0 +1,10 @@
+.dnd-board {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+  
+    .task-lane {
+      width: 220px;
+    }
+  }
+  

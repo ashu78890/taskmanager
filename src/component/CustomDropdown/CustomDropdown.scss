@@ -1,61 +1,62 @@
-.custom-dropdown-container {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
+// .custom-dropdown-container {
+//     display: flex;
+//     flex-direction: column;
+//     gap: 5px;
   
-    label {
-      font-size: 14px;
-      font-weight: 500;
-    }
+//     label {
+//       font-size: 14px;
+//       font-weight: 500;
+//     }
   
-    .custom-dropdown {
-      width: 167px;
+//     .custom-dropdown {
+//       width: 167px;
   
-      .react-select__control {
-        min-height: 30px !important;
-        height: 30px;
-        border-radius: 5px;
-        border: 1px solid #ccc;
-        box-shadow: none;
+//       .react-select__control {
+//         min-height: 30px !important;
+//         height: 30px;
+//         border-radius: 5px;
+//         border: 1px solid #ccc;
+//         box-shadow: none;
   
-        &:hover {
-          border-color: #308D46; // Your theme color
-        }
-      }
+//         &:hover {
+//           border-color: #308D46; // Your theme color
+//         }
+//       }
   
-      .react-select__value-container {
-        padding: 0 8px;
-        display: flex;
-        align-items: center;
-      }
+//       .react-select__value-container {
+//         padding: 0 8px;
+//         display: flex;
+//         align-items: center;
+//       }
   
-      .react-select__multi-value {
-        background-color: #e3f2fd;
-        border-radius: 3px;
-        font-size: 12px;
-      }
+//       .react-select__multi-value {
+//         background-color: #e3f2fd;
+//         border-radius: 3px;
+//         font-size: 12px;
+//       }
   
-      .react-select__input-container {
-        height: 30px;
-      }
+//       .react-select__input-container {
+//         height: 30px;
+//       }
   
-      .react-select__menu {
-        z-index: 9999;
-        border-radius: 5px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      }
+//       .react-select__menu {
+//         z-index: 9999;
+//         border-radius: 5px;
+//         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+//       }
   
-      .react-select__menu-portal {
-        z-index: 9999;
-      }
+//       .react-select__menu-portal {
+//         z-index: 9999;
+//       }
   
-      .react-select__indicator-separator {
-        display: none;
-      }
+//       .react-select__indicator-separator {
+//         display: none;
+//       }
   
-      .react-select__placeholder {
-        font-size: 14px;
-      }
-    }
-  }
+//       .react-select__placeholder {
+//         font-size: 14px;
+//       }
+//     }
+//   }
   
+

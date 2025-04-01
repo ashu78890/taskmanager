@@ -1,10 +1,16 @@
 .filter-container {
     display: flex;
+    flex-direction: row;
+    justify-content: space-between;
     flex-wrap: wrap;
     gap: 10px;
     align-items: center;
     padding: 10px;
     border-radius: 5px;
+    }
+    .filter_dropdown{
+        display: flex;
+        flex-direction: row;
     }
     
     .react-datepicker-wrapper {

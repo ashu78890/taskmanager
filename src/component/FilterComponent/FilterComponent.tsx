@@ -148,6 +148,7 @@ const availabilityOptions: Option[] = [
 const FilterComponent: React.FC<FilterProps> = ({ filters, onFilterChange }) => {
   return (
     <div className="filter-container">
+        <div className="filter_dropdown">
       <CustomDropdown
         options={categoryOptions}
         value={filters.category}
@@ -171,7 +172,9 @@ const FilterComponent: React.FC<FilterProps> = ({ filters, onFilterChange }) => 
         value={filters.availability}
         onChange={(selected) => onFilterChange("availability", selected)}
       />
-      <div className="date-picker">
+     
+     </div>
+      {/* <div className="date-picker">
         <DatePicker
           selected={filters.date || null}
           onChange={(date:Date | null) => onFilterChange("date", date)}
@@ -179,7 +182,7 @@ const FilterComponent: React.FC<FilterProps> = ({ filters, onFilterChange }) => 
           placeholderText="Select Date"
           popperClassName="datepicker-popper"
         />
-      </div>
+      </div> */}
 
       <div className="search-container">
         <input

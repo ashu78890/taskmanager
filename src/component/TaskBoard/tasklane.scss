@@ -1,9 +1,43 @@
+// .drop-zone {
+//     width: 200px;
+//     min-height: 250px;
+//     padding: 10px;
+//     transition: background-color 0.2s ease-in-out, border 0.2s ease-in-out;
+//     position: relative;  
+  
+//     .status-header {
+//       position: sticky;
+//       top: 0;
+//       background: #fff;
+//       padding: 10px;
+//       font-weight: bold;
+//       border-bottom: 2px solid #ddd;
+//       z-index: 10;
+//     }
+  
+//     .children-container {
+//       min-height: 250px;
+//       position: relative;
+  
+//       &.is-over {
+//         background-color: #e3f2fd;
+//         border: 2px dashed #000;
+//       }
+  
+//       &.can-drop {
+//         background-color: #ffcccc;
+//       }
+//     }
+//   }
+  
+
 .drop-zone {
     width: 200px;
     min-height: 250px;
     padding: 10px;
     transition: background-color 0.2s ease-in-out, border 0.2s ease-in-out;
-    position: relative;  
+    position: relative;
+    border-radius: 5px;
   
     .status-header {
       position: sticky;
@@ -18,15 +52,25 @@
     .children-container {
       min-height: 250px;
       position: relative;
+      transition: background-color 0.2s ease-in-out, border 0.2s ease-in-out;
+    }
   
-      &.is-over {
-        background-color: #e3f2fd;
-        border: 2px dashed #000;
-      }
+    // ✅ Default drop zones when dragging
+    &.highlight-zone {
+      background-color: white;
+      border: 2px dashed #ccc;
+    }
   
-      &.can-drop {
-        background-color: #ffcccc;
-      }
+    // ✅ The lane from which the card is picked (removes highlight effect)
+    &.source-zone {
+      background-color: inherit;
+      border: none;
+    }
+  
+    // ✅ The target lane where the card is being dropped
+    &.target-zone {
+      background-color: #ffecb3; // Light yellow
+      border: 2px solid #ffa000;
     }
   }
   

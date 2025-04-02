@@ -12,11 +12,36 @@
         display: flex;
         flex-direction: row;
     }
+
+    .date-picker-input {
+        display: flex;
+        align-items: center;
+        position: relative;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        padding: 8px 10px;
+        width: 170px;
+        z-index: 9999;
+        cursor: pointer;
     
-    .react-datepicker-wrapper {
-      width: 170px;
-      z-index: 9999;
-    }
+        input {
+          width: 100%;
+          border: none;
+          outline: none;
+          padding-right: 30px; 
+        }
+    
+        .date-picker-icon {
+          position: absolute;
+          right: 10px;
+          color: black;
+        }
+      }
+    
+    // .react-datepicker-wrapper {
+    //   width: 170px;
+    //   z-index: 9999;
+    // }
   
 
   .datepicker-popper {
@@ -28,6 +53,7 @@
     position: relative;
     display: flex;
     align-items: center;
+    color: black;
     
     input {
       width: 170px;
@@ -41,5 +67,30 @@
       right: 10px;
       color: #888;
       cursor: pointer;
+      z-index: 10000;
+    }
+  }
+
+
+  .date-picker-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: black;
+    
+    input {
+      width: 170px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      outline: none;
+    }
+    .date-picker-icon {
+      position: absolute;
+      right: 10px;
+      color: #888;
+      cursor: pointer;
+      z-index: 10000;
     }
   }

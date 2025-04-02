@@ -19,7 +19,7 @@ const DndBoard: React.FC<DndBoardProps> = React.memo(({ tasks, moveTask }) => {
 
     const [draggingTask, setDraggingTask] = useState<number | null>(null);
     const dragDropManager = useDragDropManager();
-  dragDropManager.getMonitor().subscribeToStateChange(() => {
+    dragDropManager.getMonitor().subscribeToStateChange(() => {
     const draggingItem = dragDropManager.getMonitor().getItem();
     setDraggingTask(draggingItem ? draggingItem.id : null);
   });

@@ -72,6 +72,7 @@ import { Task } from "../component/TaskBoard/DndBoard";
 
 const initialTasks: Task[] = [
     { id: 1, text: "Task 1", status: "todo" },
+    { id: 6, text: "Task 1 sadhsdsdjjkjkhjkjjkhjhjhjsdvdvv", status: "todo" },
     { id: 2, text: "Task 2", status: "in-progress" },
     { id: 3, text: "Task 3", status: "done" },
     { id: 4, text: "Task 4", status: "canceled" },
@@ -86,10 +87,10 @@ const TaskManager: React.FC = () => {
         price: [],
         rating: [],
         availability: [],
-        date: null,
+        dateRange: [null, null],
         searchTerm: "",
     });
-
+   console.log(filters,"shj")
     const moveTask = (taskId: number, newStatus: Task["status"]) => {
         setTasks((prevTasks) =>
             prevTasks.map((task) =>
@@ -104,7 +105,7 @@ const TaskManager: React.FC = () => {
     //         [name]: value,
     //     }));
     // };
-    const handleFilterChange = (name: keyof Filters, value: string | Date | Option[] | null) => {
+    const handleFilterChange = (name: keyof Filters, value: string |  [Date | null, Date | null] | Option[] | null) => {
         setFilters((prevFilters) => ({
             ...prevFilters,
             [name]: value,

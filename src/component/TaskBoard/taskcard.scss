@@ -10,5 +10,28 @@
     &.is-dragging {
       background-color: #ccc;
     }
+
+    .task-text {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: block;
+      width: 70%;
+    }
   }
+
+
+.custom-tooltip {
+  position: fixed;
+  background-color: black;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-size: 12px;
+  white-space: nowrap;
+  transform: translateX(-50%);
+  pointer-events: none;
+  z-index: 9999;
+}
+
   

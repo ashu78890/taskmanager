@@ -1,0 +1,36 @@
+.tooltip-container {
+    position: relative;
+    display: inline-block;
+    max-width: 100%;
+  }
+  
+  .tooltip-text {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: block;
+    width: 100%;
+  }
+  
+  .custom-tooltip {
+    position: absolute;
+    background: black;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    white-space: nowrap;
+    font-size: 12px;
+    bottom: 120%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s ease-in-out;
+  }
+  
+  .tooltip-container:hover .custom-tooltip {
+    opacity: 1;
+    visibility: visible;
+  }
+  

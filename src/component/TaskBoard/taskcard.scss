@@ -6,7 +6,7 @@
     border: 1px solid #000;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
     transition: background-color 0.2s ease-in-out;
-  
+    position: relative;
     &.is-dragging {
       background-color: #ccc;
     }
@@ -32,6 +32,12 @@
   transform: translateX(-50%);
   pointer-events: none;
   z-index: 9999;
+}
+
+
+.space-between{
+  display: flex;
+  justify-content: space-between;
 }
 
   

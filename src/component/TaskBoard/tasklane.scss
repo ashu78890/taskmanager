@@ -32,12 +32,18 @@
   
 
 .drop-zone {
-    width: 200px;
-    min-height: 250px;
-    padding: 10px;
-    transition: background-color 0.2s ease-in-out, border 0.2s ease-in-out;
-    position: relative;
-    border-radius: 5px;
+    // flex-grow: 1;
+    // height: 100%;
+    // width: 200px;
+    // padding: 10px;
+    // transition: background-color 0.2s ease-in-out, border 0.2s ease-in-out;
+    // position: relative;
+    // border-radius: 5px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    // height: 100%; 
+   
   
     .status-header {
       position: sticky;
@@ -49,28 +55,73 @@
       z-index: 10;
     }
   
-    .children-container {
-      min-height: 250px;
-      position: relative;
-      transition: background-color 0.2s ease-in-out, border 0.2s ease-in-out;
-    }
   
-    // ✅ Default drop zones when dragging
-    &.highlight-zone {
-      background-color: white;
-      border: 2px dashed #ccc;
-    }
-  
-    // ✅ The lane from which the card is picked (removes highlight effect)
-    &.source-zone {
-      background-color: inherit;
-      border: none;
-    }
-  
-    // ✅ The target lane where the card is being dropped
-    &.target-zone {
-      background-color: #ffecb3; // Light yellow
-      border: 2px solid #ffa000;
-    }
   }
-  
+
+//   .children-container {
+//     min-height: 250px;
+//     position: relative;
+//     transition: background-color 0.2s ease-in-out, border 0.2s ease-in-out;
+//   }
+
+//   // ✅ Default drop zones when dragging
+//   .highlight-zone {
+//     background-color: white;
+//     border: 2px dashed #ccc;
+//   }
+
+//   // ✅ The lane from which the card is picked (removes highlight effect)
+//   .source-zone {
+//     background-color: inherit;
+//     border: none;
+//   }
+
+//   // ✅ The target lane where the card is being dropped
+//   .target-zone {
+//     background-color: #ffecb3; // Light yellow
+//     border: 2px solid #ffa000;
+//   }
+.children-container {
+    flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  padding-top: 10px;
+  margin-top: -5px;
+//   height: 100%;
+    // flex-grow: 1;
+    // position: relative;
+    // height: 100%;
+    // min-height: 250px; 
+    // max-height: 600px;
+   
+    // display: flex;
+    // flex-direction: column;
+
+    // Apply max height dynamically
+    // height: 100%;
+
+    
+
+    // > * {
+    //     flex: 1; // This ensures all children grow equally
+    //     display: flex; // Helps with child alignment
+    //     align-items: center;
+    //     justify-content: center;
+    // }
+}
+
+
+.highlight-zone {
+    background-color: white;
+    border: 2px dashed #ccc;
+}
+
+.source-zone {
+    background-color: inherit;
+    border: none;
+}
+
+.target-zone {
+    background-color: #ffecb3; // Light yellow
+    border: 2px solid #ffa000;
+}

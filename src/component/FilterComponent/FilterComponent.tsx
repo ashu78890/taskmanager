@@ -201,7 +201,6 @@
 
 
 import React from "react";
-import { FaSearch } from "react-icons/fa";
 import CustomDropdown from "../CustomDropdown/CustomDropdown";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
@@ -218,7 +217,7 @@ export interface Filters {
   price: Option[];
   rating: Option[];
   availability: Option[];
-  dateRange?: [Date | null, Date | null]; // Update to an array for range
+  dateRange?: [Date | null, Date | null]; 
   searchTerm: string;
 }
 

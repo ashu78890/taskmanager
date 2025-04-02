@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import DropZone from "./TaskLane";
 import TaskCard from "./TaskCard";
 import './dndboard.scss'; 
@@ -19,13 +19,35 @@ const DndBoard: React.FC<DndBoardProps> = React.memo(({ tasks, moveTask }) => {
 
     const [draggingTask, setDraggingTask] = useState<number | null>(null);
     const dragDropManager = useDragDropManager();
-    dragDropManager.getMonitor().subscribeToStateChange(() => {
-    const draggingItem = dragDropManager.getMonitor().getItem();
-    setDraggingTask(draggingItem ? draggingItem.id : null);
-  });
+
+    useEffect(() => {
+      const monitor = dragDropManager.getMonitor();
+      const unsubscribe = monitor.subscribeToStateChange(() => {
+        const draggingItem = monitor.getItem();
+        setDraggingTask(draggingItem ? draggingItem.id : null);
+      });
+    
+      return () => unsubscribe(); // Cleanup on unmount
+    }, [dragDropManager]);
+    const [maxHeight, setMaxHeight] = useState<any>(0);
+const laneRefs = useRef<(HTMLDivElement | null)[]>([]);
+
+// useEffect(() => {
+//     requestAnimationFrame(() => {
+//         const heights = laneRefs.current.map(ref => ref?.offsetHeight || 275);
+//         const tallest = Math.max(...heights,275);
+
+//         console.log("Lane Heights:", heights);
+//         console.log("Tallest Lane:", tallest);
+
+      
+//             setMaxHeight(tallest);
+//     }); 
+// }, [tasks]);
+  
   return (
     <div className="dnd-board">
-      {["todo", "in-progress", "done", "canceled", "closed"].map((status) => (
+      {["todo", "in-progress", "done", "canceled", "closed"].map((status,index) => (
         <div key={status} className="task-lane">
           <DropZone status={status as Task["status"]} onDrop={moveTask} draggingTask={draggingTask}>
             {tasks
@@ -43,48 +65,4 @@ const DndBoard: React.FC<DndBoardProps> = React.memo(({ tasks, moveTask }) => {
 export default DndBoard;
 
 
-// import React, { useRef } from "react";
-// import { useDrop } from "react-dnd";
-// import { Task } from "./DndBoard";
-// import styles from "./tasklane.module.scss"; // Import as a module
 
-// interface DropZoneProps {
-//   status: Task["status"];
-//   onDrop: (taskId: number, newStatus: Task["status"]) => void;
-//   children: React.ReactNode;
-//   draggingTask: number | null;
-// }
-
-// const DropZone: React.FC<DropZoneProps> = ({ status, onDrop, children, draggingTask }) => {
-//   const ref = useRef<HTMLDivElement>(null);
-
-//   const [{ isOver, canDrop }, drop] = useDrop({
-//     accept: "TASK",
-//     drop: (item: { id: number }) => onDrop(item.id, status),
-//     collect: (monitor) => ({
-//       isOver: monitor.isOver(),
-//       canDrop: monitor.canDrop(),
-//     }),
-//   });
-
-//   drop(ref);
-
-//   const isDragging = draggingTask !== null;
-//   const isSourceLane =
-//     draggingTask !== null &&
-//     React.Children.toArray(children).some(
-//       (child: any) => child.props.task.id === draggingTask
-//     );
-
-//   return (
-//     <div
-//       ref={ref}
-//       className={`${styles.dropZone} ${isOver ? styles.targetZone : isDragging ? styles.highlightZone : ""} ${isSourceLane ? styles.sourceZone : ""}`}
-//     >
-//       <div className={styles.statusHeader}>{status}</div>
-//       <div className={styles.childrenContainer}>{children}</div>
-//     </div>
-//   );
-// };
-
-// export default DropZone;

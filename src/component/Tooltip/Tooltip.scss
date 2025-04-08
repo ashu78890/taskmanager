@@ -13,15 +13,12 @@
   }
   
   .custom-tooltip {
-    position: absolute;
+    position: fixed;
     background: black;
     color: white;
-    padding: 5px 10px;
     border-radius: 5px;
     white-space: nowrap;
     font-size: 12px;
-    bottom: 120%;
-    left: 50%;
     transform: translateX(-50%);
     z-index: 999;
     opacity: 0;

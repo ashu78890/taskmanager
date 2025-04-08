@@ -69,6 +69,7 @@ import DndBoard from "../component/TaskBoard/DndBoard";
 import { DndProvider } from "react-dnd";
 import { HTML5Backend } from "react-dnd-html5-backend";
 import { Task } from "../component/TaskBoard/DndBoard";
+import CustomDragLayer from "../component/TaskBoard/CustomDragLayer";
 
 const initialTasks: Task[] = [
     { id: 1, text: "Task 1", status: "todo" },
@@ -119,6 +120,7 @@ const TaskManager: React.FC = () => {
             <div className="banner"></div>
             <FilterComponent filters={filters} onFilterChange={handleFilterChange} />
             <DndProvider backend={HTML5Backend}>
+                <CustomDragLayer/>
                     <DndBoard tasks={tasks} moveTask={moveTask} />
             </DndProvider>
         </div>

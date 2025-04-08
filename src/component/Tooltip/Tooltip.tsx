@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
-import "./customTooltip.scss"; // Ensure this file exists
+import "./Tooltip.scss"; // Ensure this file exists
 
 interface CustomTooltipProps {
   text: string;

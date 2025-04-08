@@ -99,11 +99,13 @@
 // export default TaskCard;
 
 import React, { useState, useRef, useEffect } from "react";
+
 import { useDrag } from "react-dnd";
 import { Task } from "./DndBoard";
 import "./taskcard.scss";
 import Tooltip from "../Tooltip/Tooltip";
 import CustomTooltip from "../Tooltip/Tooltip";
+import { getEmptyImage } from "react-dnd-html5-backend";
 
 const TaskCard: React.FC<{ task: Task }> = ({ task }) => {
   const ref = useRef<HTMLDivElement>(null);
@@ -112,7 +114,7 @@ const TaskCard: React.FC<{ task: Task }> = ({ task }) => {
   const [showTooltip, setShowTooltip] = useState(false);
   const [tooltipPosition, setTooltipPosition] = useState({ top: 0, left: 0 });
 
-  const [{ isDragging }, drag] = useDrag({
+  const [{ isDragging }, drag,preview] = useDrag({
     type: "TASK",
     item: { id: task.id },
     collect: (monitor) => ({
@@ -121,6 +123,10 @@ const TaskCard: React.FC<{ task: Task }> = ({ task }) => {
   });
 
   drag(ref);
+
+  useEffect(() => {
+    preview(getEmptyImage(), { captureDraggingState: true });
+  }, [preview]);
 
   // Check if text is overflowing
   useEffect(() => {
@@ -150,18 +156,20 @@ const TaskCard: React.FC<{ task: Task }> = ({ task }) => {
 
   const handleMouseLeave = () => setShowTooltip(false);
 
+  
+
+
   return (
     <>
       <div ref={ref} className={`task-card ${isDragging ? "is-dragging" : ""}`}>
         <div className="space-between">
+            <Tooltip text={task.text}>
           <span
-            ref={textRef}
-            className="task-text"
-            onMouseEnter={isOverflowing ? handleMouseEnter : undefined}
-            onMouseLeave={handleMouseLeave}
+            
           >
             {task.text}
           </span>
+          </Tooltip>
          
 
           {/* Other card content */}

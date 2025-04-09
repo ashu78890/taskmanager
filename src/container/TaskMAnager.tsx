@@ -120,7 +120,7 @@ const TaskManager: React.FC = () => {
             <div className="banner"></div>
             <FilterComponent filters={filters} onFilterChange={handleFilterChange} />
             <DndProvider backend={HTML5Backend}>
-                <CustomDragLayer/>
+                {/* <CustomDragLayer/> */}
                     <DndBoard tasks={tasks} moveTask={moveTask} />
             </DndProvider>
         </div>

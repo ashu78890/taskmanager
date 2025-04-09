@@ -8,7 +8,13 @@
     transition: background-color 0.2s ease-in-out;
     position: relative;
     &.is-dragging {
-      background-color: #ccc;
+      opacity:1;
+      // background-color: #ccc;
+    }
+    &.preview-style {
+      transform: scale(1.05);
+      opacity: 0.95;
+      box-shadow: 0 0 12px rgba(0, 0, 0, 0.15);
     }
 
     .task-text {
@@ -39,5 +45,15 @@
   display: flex;
   justify-content: space-between;
 }
+
+
+.drag-preview-hidden {
+  position: absolute;
+  top: -1000px;
+  left: -1000px;
+  visibility: hidden;
+  pointer-events: none;
+}
+
 
   

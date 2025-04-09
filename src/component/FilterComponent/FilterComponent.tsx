@@ -236,7 +236,7 @@ const FilterComponent: React.FC<FilterProps> = ({ filters, onFilterChange }) => 
           onChange={(selected) => onFilterChange("category", selected)}
         />
         <CustomDropdown
-          options={[{ label: "Nike", value: "nike" }, { label: "Apple", value: "apple" }]}
+          options={[{ label: "Nikesdjhjhjkajsdfjhjffjdkjfjdkf", value: "nike" }, { label: "Applesandjdjdffjfjhjfjhfjf", value: "apple" }]}
           value={filters.brand}
           onChange={(selected) => onFilterChange("brand", selected)}
         />

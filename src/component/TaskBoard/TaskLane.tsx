@@ -209,6 +209,9 @@ const DropZone: React.FC<DropZoneProps> = ({
           ${isSourceLane ? "source-zone" : ""}
         `}
       >
+        {isOver && canDrop && (
+          <div className="move-here-pill">Move Here</div>
+        )}
         {children}
       </div>
     </div>

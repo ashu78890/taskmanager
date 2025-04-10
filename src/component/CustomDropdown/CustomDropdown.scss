@@ -101,7 +101,7 @@
     }
   
     .first-selected {
-      max-width: calc(100% - 35px); // leave space for +N
+      max-width: calc(100% - 20px); // leave space for +N
       overflow: hidden;
       text-overflow: ellipsis;
       white-space: nowrap;
@@ -109,28 +109,90 @@
       align-items: center;
     }
   
-    .multi-value-summary {
-      background-color: #e3f2fd;
-      border-radius: 3px;
-      padding: 2px 6px;
-      font-size: 12px;
-      cursor: default;
-      position: relative;
-      white-space: nowrap;
+
+
+    .multi-value-summary-wrapper {
+        position: relative;
+        display: inline-block;
+      }
+      
+      .multi-value-summary {
+        cursor: pointer;
+        padding: 2px 6px;
+        background-color: #eee;
+        border-radius: 4px;
+        font-size: 12px;
+      }
+      
+      .custom-tooltip {
+        position: absolute;
+        top: 120%;
+        left: 0;
+        background-color: white;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        padding: 6px 10px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+        z-index: 100;
+        white-space: nowrap;
+      }
+      
+  }
+
+  .select-wrapper {
+    position: relative; // required to allow absolute tooltip positioning
+    overflow: visible;  // make sure it's not clipped
+  }
+  
+  
+
+  .custom-multiselect-container {
+    position: relative;
+    width: 250px;
+  
+    .custom-value-container {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      height: 100%;
+      width: 100%;
+      overflow: hidden;
+  
+      span {
+        font-size: 14px;
+      }
+  
+      .plus-n {
+        color: #308d46;
+        cursor: pointer;
+        font-weight: bold;
+      }
+  
+      .placeholder {
+        color: #aaa;
+      }
     }
   
     .custom-tooltip {
       position: absolute;
-      top: 110%;
+      top: 36px;
       left: 0;
       background-color: white;
       border: 1px solid #ccc;
-      box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
-      padding: 6px 8px;
-      font-size: 12px;
-      white-space: nowrap;
-      z-index: 10000;
+      padding: 6px 10px;
+      border-radius: 4px;
+      box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.15);
+      z-index: 50;
+      font-size: 14px;
+  
+      ul {
+        margin-top: 4px;
+        padding-left: 16px;
+  
+        li {
+          list-style-type: disc;
+        }
+      }
     }
   }
-  
   

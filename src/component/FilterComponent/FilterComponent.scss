@@ -2,6 +2,7 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    width: 100%;
     flex-wrap: wrap;
     gap: 10px;
     align-items: center;
@@ -11,6 +12,7 @@
     .filter_dropdown{
         display: flex;
         flex-direction: row;
+        width: 100%;
     }
 
     .date-picker-input {
@@ -94,4 +96,8 @@
       cursor: pointer;
       z-index: 10000;
     }
+  }
+
+  .width-10{
+    width: 10%;
   }

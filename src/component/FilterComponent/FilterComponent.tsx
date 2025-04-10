@@ -230,15 +230,17 @@ const FilterComponent: React.FC<FilterProps> = ({ filters, onFilterChange }) => 
   return (
     <div className="filter-container">
       <div className="filter_dropdown">
+        <div className="width-10">
         <CustomDropdown
-          options={[{ label: "Electronics", value: "electronics" }, { label: "Clothing", value: "clothing" }]}
-          value={filters.category}
-          onChange={(selected) => onFilterChange("category", selected)}
+          // options={[{ label: "Electronics", value: "electronics" }, { label: "Clothing", value: "clothing" }]}
+          // value={filters.category}
+          // onChange={(selected) => onFilterChange("category", selected)}
         />
+        </div>
         <CustomDropdown
-          options={[{ label: "Nikesdjhjhjkajsdfjhjffjdkjfjdkf", value: "nike" }, { label: "Applesandjdjdffjfjhjfjhfjf", value: "apple" }]}
-          value={filters.brand}
-          onChange={(selected) => onFilterChange("brand", selected)}
+          // options={[{ label: "Nikesdjhjhjkajsdfjhjffjdkjfjdkf", value: "nike" }, { label: "Applesandjdjdffjfjhjfjhfjf", value: "apple" }]}
+          // value={filters.brand}
+          // onChange={(selected) => onFilterChange("brand", selected)}
         />
       </div>
 
